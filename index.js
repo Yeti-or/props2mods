@@ -9,7 +9,7 @@ exports.declareMods = function declareMods(config) {
   return mods;
 }
 
-exports.reactify = function reactify(bemjson, declaredMods) {
+exports.reactify = function reactify(bemjson) {
   let props = {};
   if(bemjson.mods) {
     props = Object.assign(props, bemjson.mods);
@@ -24,6 +24,6 @@ exports.bemifyMods = function bemifyMods(props, declaredMods) {
   Object.keys(props).forEach(prop => {
     if(declaredMods[prop]) mods[prop] = props[prop];
   });
-  
+
   return mods;
 }
