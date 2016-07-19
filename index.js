@@ -1,14 +1,5 @@
 'use strict';
 
-exports.declareMods = function declareMods(config) {
-  let mods = {};
-  config.states.concat(Object.keys(config.mods)).forEach(mod => {
-    mods[mod] = true;
-  });
-
-  return mods;
-}
-
 exports.reactify = function reactify(bemjson) {
   let props = {};
   if(bemjson.mods) {
