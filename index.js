@@ -1,7 +1,7 @@
 'use strict';
 
 exports.reactify = function reactify(bemjson) {
-  let props = {};
+  var props = {};
   if(bemjson.mods) {
     props = Object.assign(props, bemjson.mods);
     delete bemjson.mods;
@@ -11,8 +11,8 @@ exports.reactify = function reactify(bemjson) {
 }
 
 exports.bemifyMods = function bemifyMods(props, declaredMods) {
-  let mods = {};
-  Object.keys(props).forEach(prop => {
+  var mods = {};
+  Object.keys(props).forEach(function(prop) {
     if(declaredMods[prop]) mods[prop] = props[prop];
   });
 
